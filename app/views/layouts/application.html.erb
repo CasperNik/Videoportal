@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<%= render "/refinery/html_tag" %>
+  <% site_bar = render('/refinery/site_bar', :head => true) -%>
+  <head>
+    <%= render "/refinery/head" %>
+    <%= render "/refinery/javascripts" %>
+    <meta name='yandex-verification' content='4d74d67db486550b' />
+  </head>
+  <body id="<%= canonical_id @page %>">
+    <%= site_bar -%>
+    <div id="page_container" class="container">
+      <header id="header">
+        <%= render "/refinery/header" -%>
+      </header>
+      <section id="page">
+        <%= yield %>
+      </section>
+      <footer>
+        <%= render "/refinery/footer" -%>
+      </footer>
+    </div>
+     <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter22497337 = new Ya.Metrika({id:22497337,
+                        webvisor:true,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true});
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/22497337" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+   </body>
+</html>

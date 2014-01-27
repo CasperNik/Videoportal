@@ -1,0 +1,32 @@
+nb:
+  refinery:
+    plugins:
+      films:
+        title: Films
+    films:
+      admin:
+        films:
+          actions:
+            create_new: Lag en ny Film
+            reorder: Endre rekkefølgen på Films
+            reorder_done: Ferdig å endre rekkefølgen Films
+          records:
+            title: Films
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Films enda. Klikk på "Lag en ny Film" for å legge til din første film.
+          film:
+            view_live_html: Vis hvordan denne film ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne film
+            delete: Fjern denne film permanent
+      films:
+        show:
+          other: Andre Films
+  activerecord:
+    attributes:
+      'refinery/films/film':
+        id: Id
+        name: Name
+        description: Description
+        photo: Photo
+        date_upload: Date Upload
+        date_release: Date Release

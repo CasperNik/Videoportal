@@ -1,0 +1,16 @@
+<h2>New Category: </h2>
+<%= form_for [refinery, :films_admin, @category] do |f| -%>
+    <%= render '/refinery/admin/error_messages',
+               :object => @category,
+               :include_object_name => true %>
+
+    <div class='field'>
+      <%= f.label :name -%>
+      <%= f.text_field :name -%>
+    </div>
+
+    <%= render '/refinery/admin/form_actions', :f => f,
+               :continue_editing => false,
+               :delete_title => t('delete', :scope => @category),
+               :delete_confirmation => t('message', :scope => @category, :title => @category.name) -%>
+<% end -%>

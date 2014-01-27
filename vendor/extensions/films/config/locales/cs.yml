@@ -1,0 +1,32 @@
+cs:
+  refinery:
+    plugins:
+      films:
+        title: Films
+    films:
+      admin:
+        films:
+          actions:
+            create_new: Přidat Film
+            reorder: Řadit Films
+            reorder_done: Konec řazení Films
+          records:
+            title: Films
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Films. Zvolte "Přidat Film" pro přidání prvního film.
+          film:
+            view_live_html: Zobrazit náhled film<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit film
+            delete: Smazat film
+      films:
+        show:
+          other: Další Films
+  activerecord:
+    attributes:
+      'refinery/films/film':
+        id: Id
+        name: Name
+        description: Description
+        photo: Photo
+        date_upload: Date Upload
+        date_release: Date Release

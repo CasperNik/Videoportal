@@ -1,0 +1,31 @@
+<ul>
+  <% if ::Refinery::Films::Admin::FilmsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.films_admin_films_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_films_admin_film_path,
+                 :class => "add_icon" %>
+  </li>
+  <li>
+    <%= link_to "Add category", refinery.new_films_admin_category_path, :class => "add_icon" %>
+  </li>
+  <li>
+    <%= link_to "Импортировать данные", refinery.films_admin_uploadfilms_path, :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Films::Admin::FilmsController.sortable? && ::Refinery::Films::Film.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Films"),
+                 refinery.films_admin_films_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Films"),
+                 refinery.films_admin_films_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

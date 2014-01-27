@@ -1,0 +1,32 @@
+nl:
+  refinery:
+    plugins:
+      films:
+        title: Films
+    films:
+      admin:
+        films:
+          actions:
+            create_new: Nieuwe Film toevoegen
+            reorder: De volgorde van de Films wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Film-volgorde
+          records:
+            title: Films
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Films. Druk op 'Nieuwe Film toevoegen' om de eerste toe te voegen.
+          film:
+            view_live_html: Deze film op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze film
+            delete: Deze film definitief verwijderen
+      films:
+        show:
+          other: Andere Films
+  activerecord:
+    attributes:
+      'refinery/films/film':
+        id: Id
+        name: Name
+        description: Description
+        photo: Photo
+        date_upload: Date Upload
+        date_release: Date Release

@@ -1,0 +1,7 @@
+<%= render 'form' %>
+<% if @film.link.nil? %>
+    <% else %>
+    <p>
+    <iframe src="<%= @film.link %>" height="300" width="400" frameborder="0"></iframe>
+    </p>
+<% end %>

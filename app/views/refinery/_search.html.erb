@@ -1,0 +1,6 @@
+<%= form_tag refinery.search_path, :class=>"navbar-form navbar-left", '_lpchecked'=>'1' do -%>
+    <%= text_field_tag :query, {}, {:type => "search",
+                                    :placeholder => "Искать на сайте ...",
+                                    :class =>"form-control col-lg-8",
+                                    :value => (params[:query] if params[:query])} %>
+<% end %>

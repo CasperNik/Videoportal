@@ -1,0 +1,2 @@
+<%= will_paginate @films if Refinery::Films::Admin::FilmsController.pageable? %>
+<%= render 'sortable_list' %>

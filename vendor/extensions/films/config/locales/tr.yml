@@ -1,0 +1,32 @@
+tr:
+  refinery:
+    plugins:
+      films:
+        title: Films
+    films:
+      admin:
+        films:
+          actions:
+            create_new: Yeni Ekle Film
+            reorder: Tekrar sirala Films
+            reorder_done: Tekrar siralama tamamlandiFilms
+          records:
+            title: Films
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Films yok henuz.  Tikla "Yeni Ekle Film" eklemek senin ilk film.
+          film:
+            view_live_html: Bunu canlu film goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle film
+            delete: Bunu Sil film sonsuza dek
+      films:
+        show:
+          other: Diger Films
+  activerecord:
+    attributes:
+      'refinery/films/film':
+        id: Id
+        name: Name
+        description: Description
+        photo: Photo
+        date_upload: Date Upload
+        date_release: Date Release

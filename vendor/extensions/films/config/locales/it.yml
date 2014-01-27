@@ -1,0 +1,32 @@
+it:
+  refinery:
+    plugins:
+      films:
+        title: Films
+    films:
+      admin:
+        films:
+          actions:
+            create_new: Aggiungi Nuovo Film
+            reorder: Riordina Films
+            reorder_done: Termina il Riordino di Films
+          records:
+            title: Films
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Films. Clicca "Aggiungi Nuovo Film" per aggiungere il tuo primo film.
+          film:
+            view_live_html: Guarda live questo film <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo film
+            delete: Rimuovi per sempre questo film
+      films:
+        show:
+          other: Altri Films
+  activerecord:
+    attributes:
+      'refinery/films/film':
+        id: Id
+        name: Name
+        description: Description
+        photo: Photo
+        date_upload: Date Upload
+        date_release: Date Release

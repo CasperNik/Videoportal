@@ -1,0 +1,34 @@
+zh-CN:
+  refinery:
+    plugins:
+      films:
+        title: Films
+    films:
+      admin:
+        films:
+          actions:
+            create_new: 建立新的 Film
+            reorder: 对 Films 重新排序
+            reorder_done: 对 Films 的重新排序结束
+          records:
+            title: Films
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Films yet. Click "Add New Film" to add your first film.
+            no_items_yet: 目前没有 Films . 点击 "Add New Film" 创建一个film.
+          film:
+            view_live_html: 查看 film 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 film
+            delete: 永久删除 film
+      films:
+        show:
+          other: 其他 Films
+  activerecord:
+    attributes:
+      'refinery/films/film':
+        id: Id
+        name: Name
+        description: Description
+        photo: Photo
+        date_upload: Date Upload
+        date_release: Date Release

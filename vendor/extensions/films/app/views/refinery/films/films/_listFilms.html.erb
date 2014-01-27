@@ -1,0 +1,12 @@
+<ul class="thumbnails">
+  <% @films.each do |film| %>
+      <li class="span2">
+        <div class="thumbnail" style="height:285px;">
+          <%= link_to (image_fu film.photo,'300x200', :'data-src'=>'holder.js/260x180'), refinery.films_film_path(film), :class=>"thumbnail" %>
+          <h5><%= film.name %></h5>
+        </div>
+      </li>
+  <% end %>
+</ul>
+<div class="clearfix"></div>
+<%= will_paginate @films %>

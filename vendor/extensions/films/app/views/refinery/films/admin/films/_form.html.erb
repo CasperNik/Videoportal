@@ -1,0 +1,63 @@
+<%= form_for [refinery, :films_admin, @film] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @film,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, size: 50 -%>
+  </div>
+    <div class='field'>
+      <%= render '/refinery/admin/wysiwyg',
+                 :f => f,
+                 :fields => [:preview],
+                 :object => "films/film" -%>
+    </div>
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+               :f => f,
+               :fields => [:description],
+               :object => "films/film" -%>
+  </div>
+
+
+  <div class='field'>
+    <%= f.label :photo -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :photo_id,
+               :image => @film.photo,
+               :toggle_image_display => false -%>
+  </div>
+    <div class='field'>
+     <%= f.label "Category" %>
+      <div class="wrap_category_checkbox" style="border: 2px grey solid; dispaly:table;">
+      <% @category.each do |cat| %>
+           <label class="checkbox admin_form" style="float:left; margin:5px; display:table-cell;">
+          <%= check_box_tag "category[#{cat.id}]", 1, @selected_ratings.include?(cat.id), class:"checkbox"  %>
+          <%= cat.name %></label>
+          <% end %>
+        <div class="clearfix"></div>
+       </div>
+    </div>
+
+  <div class='field'>
+    <%= f.label :date_upload -%>
+    <%= f.date_select :date_upload -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :date_release -%>
+    <%= f.date_select :date_release, start_year: Time.now.year-20, end_year: Time.now.year, discard_month:true, discard_day:true -%>
+  </div>
+    <div class='field'>
+      <%= f.label :link -%>
+      <%= f.text_field :link, size:100 -%>
+    </div>
+    <br />
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.films.admin.films.film'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @film.name) -%>
+<% end -%>

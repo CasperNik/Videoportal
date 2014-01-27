@@ -1,0 +1,32 @@
+fr:
+  refinery:
+    plugins:
+      films:
+        title: Films
+    films:
+      admin:
+        films:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Film
+            reorder: Réordonner les Films
+            reorder_done: Fin de réordonnancement des Films
+          records:
+            title: Films
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Film. Cliquer sur "Créer un(e) nouve(au/l/lle) Film" pour créer votre premi(er/ère) film.'
+          film:
+            view_live_html: Voir ce(t/tte) film <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) film
+            delete: Supprimer définitivement ce(t/tte) film
+      films:
+        show:
+          other: Autres Films
+  activerecord:
+    attributes:
+      'refinery/films/film':
+        id: Id
+        name: Name
+        description: Description
+        photo: Photo
+        date_upload: Date Upload
+        date_release: Date Release

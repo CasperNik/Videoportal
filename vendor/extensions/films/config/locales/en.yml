@@ -1,0 +1,32 @@
+en:
+  refinery:
+    plugins:
+      films:
+        title: Films
+    films:
+      admin:
+        films:
+          actions:
+            create_new: Add New Film
+            reorder: Reorder Films
+            reorder_done: Done Reordering Films
+          records:
+            title: Films
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Films yet. Click "Add New Film" to add your first film.
+          film:
+            view_live_html: View this film live <br/><em>(opens in a new window)</em>
+            edit: Edit this film
+            delete: Remove this film forever
+      films:
+        show:
+          other: Other Films
+  activerecord:
+    attributes:
+      'refinery/films/film':
+        id: Id
+        name: Название фильма
+        description: Описание
+        photo: Постер
+        date_upload: Date Upload
+        date_release: Дата выхода

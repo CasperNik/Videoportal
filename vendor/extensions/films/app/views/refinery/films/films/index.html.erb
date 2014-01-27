@@ -1,0 +1,7 @@
+<% content_for :title do %>
+ <%= @page_title = "Фильмы онлайн в высоком качестве здесь" %>
+<% end %>
+<% content_for :body do %>
+    <%= render 'listFilms' %>
+<% end %>
+<%= render '/refinery/content_page' %>

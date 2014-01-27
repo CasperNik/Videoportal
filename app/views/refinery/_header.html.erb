@@ -1,0 +1,51 @@
+<!--
+<h1 id='logo'>
+ <%= link_to Refinery::Core.site_name, refinery.root_path %>
+</h1>-->
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-header"><a class="navbar-brand" href="/"><%= Refinery::Core.site_name %></a> </div>
+   <div class="navbar-collapse collapse navbar-responsive-collapse">
+  <%= add_menu.to_html %>
+   <div class="search"><%= render '/refinery/search' %></div>
+  </div>
+</div>
+<script>
+  $('#main_menu').find("ul").addClass('nav navbar-nav');
+  $('nav#main_menu').removeClass('clearfix');
+</script>
+
+<div class="row">
+<div id="myCarousel" class="carousel slide span12">
+   <!-- Carousel items --> <!--
+  <div class="carousel-inner">
+    <div class="active item" style="margin: 5px;"><%= image_fu @list_films_banner.last.photo, "300x200" %>
+    <div class="carousel-caption"><h2><%= @list_films_banner.last.name %></h2><p><%= raw @list_films_banner.last.preview %></p></div></div>
+    <% @list_films_banner.each do |film| %>
+        <div class="item" style="margin: 5px;"><%= image_fu film.photo, "300x200" %>
+        <div class="carousel-caption">
+        <%= link_to refinery.films_film_path(film) do %>
+              <h2><%= film.name %></h2>
+              <%= raw film.preview %>
+              <% end %>
+         </div></div>
+    <% end %>
+  </div> -->
+</div>
+ <!--  <script>
+    $('.carousel').carousel()
+  </script> -->
+
+<!-- List categories -->
+<div class="span12" style="margin-top: 10px;">
+    <% i = 0 %>
+    <div class="btn-group">
+         <% @list_categories.each do |list| %>
+         <% if i==11 %>
+              <% i=0 %></div><br /><div class="btn-group">
+            <% end %>
+        <button class="btn" id="<%= list.id %>"><%= list.name %></button>
+         <% i=i+1 %>
+        <% end %>
+    </div>
+</div>
+</div>

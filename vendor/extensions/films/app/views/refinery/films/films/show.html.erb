@@ -1,0 +1,50 @@
+<% content_for :title do %>
+  <%= @page_title = @film.name+"смотреть онлайн в высоком качестве" %>
+<% end %>
+
+<% content_for :body do %>
+    <div class="row" style="margin:10px;">
+    <div class="span12" style="text-align:center;">
+      <h2><%= @film.name %></h2>
+     <noindex>
+    <iframe src="<%= @film.link %>" height="600" width="800" frameborder="0"></iframe>
+     </noindex>
+     </div>
+
+      <div class="span3" style="margin-top: 75px; margin-left: 10px;">
+          <section>
+
+              <%= image_fu @film.photo, "300x300" %>
+
+          </section>
+        <section>
+          <% if @film.date_release.nil? %>
+              <% else %>
+          <h3>Дата выхода:</h3>
+          <p>
+            <%= @film.date_release.strftime("%Y год.") %>
+          </p>
+              <% end %>
+        </section>
+      </div>
+    <div class="span8">
+            <section>
+                <h2>Описание:</h2>
+                <p>
+                  <%=raw @film.description %>
+                </p>
+            </section>
+
+    </div>
+    </div>
+<% end %>
+
+
+    <% content_for :side_body do %>
+        <h3 style="margin-left: 40px;">Другие фильмы: </h3>
+        <%= render 'listFilms' %>
+
+<% end %>
+
+
+<%= render '/refinery/content_page' %>

@@ -1,0 +1,54 @@
+<%= form_tag('/refinery/uploadfilms', multipart: true) do %>
+    <%= file_field_tag 'file' %>
+    <%= submit_tag "Send", class: "btn btn-large btn-primary" %>
+<% end %>
+
+<% if @upload.nil? %>
+<h2>Данных нет</h2>
+<% else %>
+    <h3>Данные успешно загруженны. Всего записей: <%=  @upload %></h3>
+
+<% end %>
+<% if @loadfilms.nil? %>
+    <h2>Данных нет</h2>
+<% else %>
+         <h3>Последняя запись в списке: </h3>
+        <strong>Img_id: </strong><%= @loadfilms.img %><br />
+        <strong>Name:</strong> <%= @loadfilms.name %><br />
+        <strong>Preview:</strong> <%= @loadfilms.preview %> <br />
+        <strong>Description:</strong> <%= @loadfilms.desc %><br />
+        <strong>Link to film:</strong> <%= @loadfilms.link_to_film %><br />
+
+    <button class="import_btn" id="import">Выполнить слияние.</button>
+    <div class="result_import"></div>
+    <div class="fix_title"><button class="fixtitle_btn" id="fix_title">Убрать лишнее из названия</button><span>Смотреть онлайн бесплатно в хорошем качестве.</span></div>
+<% end %>
+
+
+<script>
+$(document).ready(function() {
+    $("button.import_btn").click(function(event){
+        $.ajax({
+        type: "GET",
+        url: "/refinery/uploadfilms/import",
+        dataType: "html"
+        }).done(function(data){
+          $('button.import_btn').fadeOut(500);
+          $('div.result_import1').html("<p><h2>"+data+"</h2></p> ");
+        });
+        event.preventDefault();
+    });
+    $("button.fixtitle_btn").click(function(event){
+        $.ajax({
+            type: "GET",
+            url: "/refinery/uploadfilms/fix_title",
+            dataType: "html"
+        }).done(function(data){
+                    $('div.fix_title').fadeOut(500);
+                    $('div.result_import').html("<p><h2>"+data+"</h2></p> ");
+                });
+        event.preventDefault();
+    });
+
+});
+</script>

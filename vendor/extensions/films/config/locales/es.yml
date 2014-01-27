@@ -1,0 +1,33 @@
+es:
+  refinery:
+    plugins:
+      films:
+        title: Films
+#        article: masculino/femenino
+    films:
+      admin:
+        films:
+          actions:
+            create_new: Crear nuevo film
+            reorder: Reordenar films
+            reorder_done: Reordenación de films completada
+          records:
+            title: Films
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay films todavía. Pulsa en "Crear nuevo Film" para crear tu primer film.
+          film:
+            view_live_html: Ver este film como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este film
+            delete: Borrar este film para siempre
+      films:
+        show:
+          other: Otros films
+  activerecord:
+    attributes:
+      'refinery/films/film':
+        id: Id
+        name: Name
+        description: Description
+        photo: Photo
+        date_upload: Date Upload
+        date_release: Date Release

@@ -1,0 +1,34 @@
+ru:
+  refinery:
+    plugins:
+      films:
+        title: Фильмы
+    films:
+      admin:
+        films:
+          actions:
+            create_new: Добавить новый фильм
+            reorder: Изменить порядок
+            reorder_done: Done изменение порядка
+          records:
+            title: Фильмы
+            sorry_no_results: Sorry! Результатов не найдено.
+            no_items_yet: Фильмов еще не добавленно. Нажмите "Добавить новый фильм" чтобы добавить фильм
+          film:
+            view_live_html: Предпросмотр <br/><em>(откроется в новом окне)</em>
+            edit: Редактировать
+            delete: Удалить
+      films:
+        show:
+          other: Другие фильмы
+  activerecord:
+    attributes:
+      'refinery/films/film':
+        id: Id
+        name: Название
+        description: Описание
+        preview: Краткое описание
+        photo: Поттер
+        date_upload: Дата загрузки
+        date_release: Дата выхода
+        link: Ссылка на источник

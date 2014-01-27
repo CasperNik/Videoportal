@@ -1,0 +1,45 @@
+
+<% content_for :body_content_title do %>
+    <%= t('.search_results_for', :what => params[:query]) %>
+<% end %>
+
+<% content_for :body do %>
+    <% if @results.empty? %>
+       <!-- <%= t('.no_results_for', :what => params[:query]) %> -->
+        <div class="alert alert-dismissable alert-info" style="margin: 10px; color:#000000;">
+            <h4>К сожалению по вашему запросу: " <%= @ask %> ", ничего не найденно. </h4>
+            <p>Возможно в нашей базе еще не содержится нужного вам фильма.</p>
+            <p>Попробуйте зайти к нам позже. Спасибо за понимание.</p>
+         </div>
+    <% else %>
+        <h3 style="margin-left: 40px;">Результаты поиска:</h3>
+        <ul id="search_results">
+          <% @results.each do |result| %>
+              <li class="span2">
+                <div class="thumbnail" style="height:295px;">
+               <%= link_to ( image_fu result.photo,'300x200', :'data-src'=>'holder.js/260x180'), result_url(result), :class=>"thumbnail" %>
+                <%= link_to result_title(result).html_safe, result_url(result) %>
+                </div>
+              </li>
+          <% end %>
+        </ul>
+     <% end %>
+    <div class="clearfix"></div>
+    <h3 style="margin-left: 40px;">Другие фильмы:</h3>
+    <ul class="thumbnails">
+      <% @films.each do |film| %>
+          <li class="span2">
+            <div class="thumbnail" style="height:285px;">
+              <%= link_to (image_fu film.photo,'300x200', :'data-src'=>'holder.js/260x180'), refinery.films_film_path(film), :class=>"thumbnail" %>
+              <h5><%= film.name %></h5>
+            </div>
+          </li>
+
+      <% end %>
+    </ul>
+    <div class="clearfix"></div>
+    <%= will_paginate @films %>
+
+<% end %>
+
+<%= render "/refinery/content_page" %>

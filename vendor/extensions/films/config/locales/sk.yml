@@ -1,0 +1,32 @@
+sk:
+  refinery:
+    plugins:
+      films:
+        title: Films
+    films:
+      admin:
+        films:
+          actions:
+            create_new: Pridať Film
+            reorder: Preusporiadať Films
+            reorder_done: Koniec radenia Films
+          records:
+            title: Films
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Films. Kliknite na "Pridať Film" pre pridanie prvého film.
+          film:
+            view_live_html: Zobraziť náhľad film<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť film
+            delete: Zmazať film
+      films:
+        show:
+          other: Daľšie Films
+  activerecord:
+    attributes:
+      'refinery/films/film':
+        id: Id
+        name: Name
+        description: Description
+        photo: Photo
+        date_upload: Date Upload
+        date_release: Date Release

@@ -1,0 +1,24 @@
+<meta charset='<%= Rails.application.config.encoding %>' />
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+<title><%= yield (:title) || 'Videoportal' %></title>
+<%= favicon_link_tag '/favicon.ico', rel: 'shortcut icon', type: 'image/x-icon' %>
+<%= raw %(<meta name="description" content="#{@meta.meta_description}" />) if @meta.meta_description.present? -%>
+<%= raw %(<link rel="canonical" content="#{@canonical}" />) if @canonical.present? -%>
+<%= csrf_meta_tags if Refinery::Core.authenticity_token_on_frontend -%>
+<%= yield :meta %>
+
+<%= stylesheet_link_tag "application" %>
+<%= yield :stylesheets %>
+
+<%= render '/refinery/google_analytics' %>
+
+<%= javascript_include_tag 'modernizr-min' %>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-44435616-1', 'videooptic.com');
+    ga('send', 'pageview');
+</script>

@@ -1,0 +1,7 @@
+videoportal
+===========
+
+videoportal
+
+Part of the commercial project.
+Unfortunately commercial secrecy makes it impossible to publish the source code of the project in full.
